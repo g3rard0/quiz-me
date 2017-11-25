@@ -2,4 +2,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: #F9FAFC;
+}
+
+#top-bar {
+  background: #FFF;
+  box-shadow: 0px 1px 1px 0px rgba(157,157,212,.2);
+}
+
+.ui.header {
+  color: #9D9DD4;
+  font-weight: 100;
 }
