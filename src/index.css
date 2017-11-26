@@ -27,16 +27,14 @@ body {
   overflow: hidden;
 }
 
-
-.category {
-  cursor: pointer;
-}
-
 .category:hover {
   background: #9D9DD4;
+}
+
+.category:hover a {
   color: #FFF;
 }
 
-/*.category-list .ui.grid {
-  margin: 0;
-}*/
+a {
+  color: #9D9DD4;
+}
