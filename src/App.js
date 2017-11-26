@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TopBar from './components/TopBar';
+import Main from './components/Main';
 import logo from './logo.svg';
 
 class App extends Component {
@@ -7,6 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <TopBar />
+        <Main />
       </div>
     );
   }

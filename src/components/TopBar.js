@@ -9,7 +9,7 @@ const TopBar = () => (
     <div id="top-bar">
       <Segment vertical>
         <Container>
-          <Header as='h1'>Quiz.me</Header>
+          <Header as='h2'>Quiz.me</Header>
         </Container>
       </Segment>
     </div>

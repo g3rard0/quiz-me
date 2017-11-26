@@ -11,6 +11,20 @@ body {
 }
 
 .ui.header {
-  color: #9D9DD4;
+  color: #2F3245;
   font-weight: 100;
+}
+
+.section {
+  padding: 50px 0;
+}
+
+.content {
+  background: #FFF;
+  margin: 20px 0;
+  box-shadow: 0px 1px 1px 0px rgba(157,157,212,.2);
+}
+
+.content--padding {
+  padding: 10px;
 }
