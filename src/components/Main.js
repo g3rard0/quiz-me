@@ -9,6 +9,7 @@ import {
 } from 'react-router-dom';
 
 import Categories from './Categories';
+import Difficulty from './Difficulty';
 
 const Main = ({categories}) => (
   <div>
@@ -18,6 +19,7 @@ const Main = ({categories}) => (
       </div>
       <Switch>
         <Route exact path="/" render={props => <Categories {...props} categories={categories}/>} />
+        <Route path="/categories/:categoryId" component={Difficulty}/>
       </Switch>
     </Container>
   </div>
