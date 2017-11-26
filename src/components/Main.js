@@ -3,6 +3,7 @@ import {
   Container,
   Header
 } from 'semantic-ui-react';
+import CategoryList from './CategoryList';
 
 const Main = () => (
   <div>
@@ -12,7 +13,7 @@ const Main = () => (
       </div>
       <Header as='h3'>Select categories</Header>
       <div className="content content--padding">
-        Category
+        <CategoryList />
       </div>
     </Container>
   </div>

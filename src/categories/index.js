@@ -1,7 +1,7 @@
 const categories = [
   {
     type: "Any Category",
-    value: null
+    value: 0
   },
   {
     type: "General Knowledge",
@@ -92,11 +92,13 @@ const categories = [
     value: 30
   },
   {
-    type: "Entertainment: Japanese Anime & Manga"
+    type: "Entertainment: Japanese Anime & Manga",
     value: 31
   },
   {
-    type: "Entertainment: Cartoon & Animations"
+    type: "Entertainment: Cartoon & Animations",
     value: 32
   }
 ];
+
+export default categories;

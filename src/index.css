@@ -23,8 +23,19 @@ body {
   background: #FFF;
   margin: 20px 0;
   box-shadow: 0px 1px 1px 0px rgba(157,157,212,.2);
+  border: 1px solid #9D9DD4;
+  overflow: hidden;
 }
 
 .content--padding {
   padding: 10px;
+}
+
+.category {
+  cursor: pointer;
+}
+
+.category:hover {
+  background: #9D9DD4;
+  color: #FFF;
 }
