@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import TopBar from './TopBar';
 import Main from './Main';
-import categories from '../categories';
+// import categories from '../categories';
+import { categories } from '../data';
 
 class Quiz extends Component {
   state = {

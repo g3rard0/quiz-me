@@ -1,4 +1,4 @@
-const categories = [
+export const categories = [
   {
     type: "Any Category",
     value: 0
@@ -100,5 +100,3 @@ const categories = [
     value: 32
   }
 ];
-
-export default categories;
