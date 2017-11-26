@@ -6,8 +6,8 @@ import CategoryList from './CategoryList';
 
 const Categories = ({categories}) => (
   <div>
-    <Header as='h3'>Select categories</Header>
-    <div className="content content--padding">
+    <Header as='h3'>Select category</Header>
+    <div className="content">
       <CategoryList categories={categories}/>
     </div>
   </div>
