@@ -3,7 +3,12 @@ import {
   Container,
   Header
 } from 'semantic-ui-react';
-import CategoryList from './CategoryList';
+import {
+  Switch,
+  Route
+} from 'react-router-dom';
+
+import Categories from './Categories';
 
 const Main = ({categories}) => (
   <div>
@@ -11,10 +16,9 @@ const Main = ({categories}) => (
       <div className="section">
         <Header as='h1'>Create your quiz.</Header>
       </div>
-      <Header as='h3'>Select categories</Header>
-      <div className="content content--padding">
-        <CategoryList categories={categories}/>
-      </div>
+      <Switch>
+        <Route exact path="/" render={props => <Categories {...props} categories={categories}/>} />
+      </Switch>
     </Container>
   </div>
 );
