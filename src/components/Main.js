@@ -5,7 +5,7 @@ import {
 } from 'semantic-ui-react';
 import CategoryList from './CategoryList';
 
-const Main = () => (
+const Main = ({categories}) => (
   <div>
     <Container>
       <div className="section">
@@ -13,7 +13,7 @@ const Main = () => (
       </div>
       <Header as='h3'>Select categories</Header>
       <div className="content content--padding">
-        <CategoryList />
+        <CategoryList categories={categories}/>
       </div>
     </Container>
   </div>

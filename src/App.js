@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import TopBar from './components/TopBar';
-import Main from './components/Main';
+import Quiz from './components/Quiz';
 import logo from './logo.svg';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <TopBar />
-        <Main />
+        <Quiz />
       </div>
     );
   }
