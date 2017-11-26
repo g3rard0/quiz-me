@@ -5,7 +5,8 @@ import {
 } from 'semantic-ui-react';
 import {
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
 
 import Categories from './Categories';
@@ -19,6 +20,7 @@ const Main = ({categories, difficulties}) => (
       </div>
       <Switch>
         <Route exact path="/" render={props => <Categories {...props} categories={categories}/>} />
+        <Route exact path="/categories" component={() => <Redirect to="/" />} />
         <Route path="/categories/:categoryId" render={props => <Difficulty {...props} difficulties={difficulties}/>}/>
       </Switch>
     </Container>

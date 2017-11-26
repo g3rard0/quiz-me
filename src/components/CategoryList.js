@@ -6,7 +6,7 @@ const CategoryList = ({categories}) => (
   <div className="category-list">
     <Grid padded>
         {categories.map((category) =>
-          <Grid.Column key={category.value} mobile={16} tablet={8} computer={4} className="category">
+          <Grid.Column key={category.value} mobile={16} tablet={8} computer={4} className="category selectable-item">
             <Link to={`categories/${category.value}`}>
               <div className="category__type">{category.type}</div>
             </Link>

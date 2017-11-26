@@ -27,11 +27,15 @@ body {
   overflow: hidden;
 }
 
-.category:hover {
+.selectable-item {
+  transition: all .3s;
+}
+
+.selectable-item:hover {
   background: #9D9DD4;
 }
 
-.category:hover a {
+.selectable-item:hover a {
   color: #FFF;
 }
 
