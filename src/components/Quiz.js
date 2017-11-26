@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import TopBar from './TopBar';
 import Main from './Main';
-// import categories from '../categories';
-import { categories } from '../data';
+import {
+  categories,
+  difficulties
+} from '../data';
 
 class Quiz extends Component {
   state = {
-    categories: [...categories]
+    categories: [...categories],
+    difficulties: [...difficulties]
   };
   render() {
     const { categories } = this.state;
     return (
       <div className="Quiz">
         <TopBar />
-        <Main categories={categories}/>
+        <Main categories={categories} difficulties={difficulties}/>
       </div>
     );
   }

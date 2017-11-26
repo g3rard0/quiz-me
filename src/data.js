@@ -100,3 +100,18 @@ export const categories = [
     value: 32
   }
 ];
+
+export const difficulties = [
+  {
+    type: 'any',
+  },
+  {
+    type: 'easy',
+  },
+  {
+    type: 'medium'
+  },
+  {
+    type: 'hard'
+  }
+];

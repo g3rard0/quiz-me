@@ -11,7 +11,7 @@ import {
 import Categories from './Categories';
 import Difficulty from './Difficulty';
 
-const Main = ({categories}) => (
+const Main = ({categories, difficulties}) => (
   <div>
     <Container>
       <div className="section">
@@ -19,7 +19,7 @@ const Main = ({categories}) => (
       </div>
       <Switch>
         <Route exact path="/" render={props => <Categories {...props} categories={categories}/>} />
-        <Route path="/categories/:categoryId" component={Difficulty}/>
+        <Route path="/categories/:categoryId" render={props => <Difficulty {...props} difficulties={difficulties}/>}/>
       </Switch>
     </Container>
   </div>
