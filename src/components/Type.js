@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import {
+  Header,
+  Grid
+} from 'semantic-ui-react';
 
 class Type extends Component {
   componentDidMount() {
@@ -10,7 +14,10 @@ class Type extends Component {
   render() {
     const { match } = this.props;
     return (
-      <div>wut??? {match.params.difficulty}</div>
+      <div>
+        <Header as="h3">Select difficulty</Header>
+        wut??? {match.params.difficulty}
+      </div>
     );
   }
 }

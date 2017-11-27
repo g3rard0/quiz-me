@@ -115,3 +115,15 @@ export const difficulties = [
     type: 'hard'
   }
 ];
+
+export const types = [
+  {
+    type: 'any'
+  },
+  {
+    type; 'multiple'
+  },
+  {
+    type: 'boolean'
+  }
+];
