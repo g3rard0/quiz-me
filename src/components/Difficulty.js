@@ -14,7 +14,7 @@ class Difficulty extends Component {
   render() {
     const { difficulties, match, difficultySelected} = this.props;
     return (
-      <div>
+      <div className="settings__section">
       <Header as="h3">Select difficulty</Header>
         <Grid>
           {

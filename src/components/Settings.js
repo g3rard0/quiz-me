@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { categories, difficulties, types } from '../data';
 import Difficulty from './Difficulty';
+import Type from './Type';
 
 class Settings extends Component {
   constructor(props) {
@@ -21,10 +22,15 @@ class Settings extends Component {
     this.setState(newState);
   }
 
+  handleChangeType = (type) => {
+    const newState = { ...this.state, typeSelected: type };
+    this.setState(newState);
+  }
   render() {
     return (
       <div>
         <Difficulty {...this.state} changeDifficulty={this.handleChangeDifficulty}/>
+        <Type {...this.state} changeType={this.handleChangeType}/>
       </div>
     );
   }

@@ -49,3 +49,7 @@ a {
 .selected a {
   color: #FFF;
 }
+
+.settings__section {
+  margin-bottom: 20px;
+}
