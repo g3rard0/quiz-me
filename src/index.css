@@ -31,6 +31,7 @@ body {
   transition: all .3s;
 }
 
+.link,
 .ui.button.selected,
 .ui.button.selected:focus,
 .selectable-item:hover {
@@ -62,4 +63,18 @@ a {
 #create-quiz {
   color: #FFF;
   background: #58A7CD;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.link {
+  display: inline-block;
+  padding: 11px 21px;
+  border-radius: 4px;
 }

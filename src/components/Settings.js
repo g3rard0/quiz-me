@@ -9,6 +9,8 @@ import {
   Icon,
   Loader
 } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 class Settings extends Component {
   constructor(props) {
@@ -21,10 +23,10 @@ class Settings extends Component {
       categorySelected: categoryId,
       difficultySelected: 'any',
       typeSelected: 'any',
-      isLoading: false,
       questionsCount: 1,
       error: false
     };
+    this.url = 'https://opentdb.com/api.php';
   }
 
   handleChangeDifficulty = (difficulty) => {
@@ -37,12 +39,13 @@ class Settings extends Component {
     this.setState(newState);
   }
 
-  handleFormSubmit = () => {
-    if (this.state.questionsCount) {
-      this.setState({isLoading: true});
-    } else {
-      this.setState({ error: true })
+  handleClick = (e) => {
+    const {questionsCount, error} = this.state;
+    if (!e.target.value) {
+      this.setState({ error: true, questionsCount: '' });
+      return;
     }
+    this.setState({error: false, questionsCount: e.target.value});
   }
 
   render() {
@@ -54,13 +57,12 @@ class Settings extends Component {
         <div className="settings__section">
           <Header as="h3">Number of Questions</Header>
           <Input placeholder='Number of Questions' value={questionsCount} error={error}
-            onChange={(e) => this.setState({ questionsCount: e.target.value})}/>
+            onChange={this.handleClick}/>
         </div>
-        <div className="settings__section">
-          <Button fluid onClick={() => this.handleFormSubmit()}>
-            {!isLoading && <span>Create Quiz <Icon name="long arrow right" /></span>}
-            {isLoading && <span><Loader active inline='centered' /></span>}
-          </Button>
+        <div className="settings__section text-center">
+          <Link to={`/`} className={`link ${!questionsCount ? 'disabled': ''}`}>
+            Create Quiz <Icon name="long arrow right"/>
+          </Link>
         </div>
       </div>
     );
