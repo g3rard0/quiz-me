@@ -53,3 +53,13 @@ a {
 .settings__section {
   margin-bottom: 20px;
 }
+
+.ui.input input:focus,
+.ui.input.focus input {
+  border-color: #9D9DD4;
+}
+
+#create-quiz {
+  color: #FFF;
+  background: #58A7CD;
+}

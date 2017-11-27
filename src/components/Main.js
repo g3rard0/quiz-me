@@ -17,7 +17,7 @@ const Main = ({categories, difficulties}) => (
   <div>
     <Container>
       <div className="section">
-        <Header as='h1'>Create your quiz.</Header>
+        <Header as='h1'>Options</Header>
       </div>
       <Switch>
         <Route exact path="/" render={props => <Categories {...props} />} />
