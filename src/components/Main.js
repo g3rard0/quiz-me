@@ -12,6 +12,7 @@ import {
 import Categories from './Categories';
 import Difficulty from './Difficulty';
 import Settings from './Settings';
+import QuizList from './QuizList';
 
 const Main = ({categories, difficulties}) => (
   <div>
@@ -23,6 +24,7 @@ const Main = ({categories, difficulties}) => (
         <Route exact path="/" render={props => <Categories {...props} />} />
         <Route exact path="/categories" component={() => <Redirect to="/" />} />
         <Route path="/categories/:categoryId" render={props => <Settings {...props} /> }/>
+        <Route path="/quiz" component={QuizList} />
       </Switch>
     </Container>
   </div>
