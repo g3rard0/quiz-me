@@ -49,7 +49,8 @@ class Settings extends Component {
   }
 
   render() {
-    const { isLoading, questionsCount, error} = this.state;
+    const { isLoading, questionsCount, error, categorySelected, difficultySelected, typeSelected} = this.state;
+    const path = `/quiz?amount=${questionsCount}&category=${categorySelected}&difficulty=${difficultySelected}&type=${typeSelected}`;
     return (
       <div>
         <Difficulty {...this.state} changeDifficulty={this.handleChangeDifficulty}/>
@@ -60,7 +61,7 @@ class Settings extends Component {
             onChange={this.handleClick}/>
         </div>
         <div className="settings__section text-center">
-          <Link to={`/`} className={`link ${!questionsCount ? 'disabled': ''}`}>
+          <Link to={path} className={`link ${!questionsCount ? 'disabled': ''}`}>
             Create Quiz <Icon name="long arrow right"/>
           </Link>
         </div>
