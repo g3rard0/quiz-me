@@ -118,12 +118,15 @@ export const difficulties = [
 
 export const types = [
   {
-    type: 'any'
+    type: 'Any Type',
+    value: 'any'
   },
   {
-    type: 'multiple'
+    type: 'Multiple',
+    value: 'multiple'
   },
   {
-    type: 'boolean'
+    type: 'True / False',
+    value: 'boolean'
   }
 ];

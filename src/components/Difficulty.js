@@ -46,7 +46,8 @@ class Difficulty extends Component {
         <Route
           path={"/categories/:categoryId/difficulty/:difficulty"}
           render={props => <Type {...props}
-          changeDifficulty={this.handleChangeDifficulty}/> }/>
+          changeDifficulty={this.handleChangeDifficulty}
+        /> }/>
       </div>
     );
   }
