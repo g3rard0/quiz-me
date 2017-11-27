@@ -121,7 +121,7 @@ export const types = [
     type: 'any'
   },
   {
-    type; 'multiple'
+    type: 'multiple'
   },
   {
     type: 'boolean'
