@@ -31,9 +31,11 @@ body {
   transition: all .3s;
 }
 
-.selected,
+.ui.button.selected,
+.ui.button.selected:focus,
 .selectable-item:hover {
   background: #9D9DD4;
+  color: #FFF;
 }
 
 .selectable-item:hover a {
