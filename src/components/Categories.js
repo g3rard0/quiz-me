@@ -3,8 +3,9 @@ import {
   Header
 } from 'semantic-ui-react';
 import CategoryList from './CategoryList';
+import { categories } from '../data';
 
-const Categories = ({categories}) => (
+const Categories = () => (
   <div>
     <Header as='h3'>Select category</Header>
     <div className="content">

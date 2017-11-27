@@ -11,6 +11,7 @@ import {
 
 import Categories from './Categories';
 import Difficulty from './Difficulty';
+import Settings from './Settings';
 
 const Main = ({categories, difficulties}) => (
   <div>
@@ -19,9 +20,9 @@ const Main = ({categories, difficulties}) => (
         <Header as='h1'>Create your quiz.</Header>
       </div>
       <Switch>
-        <Route exact path="/" render={props => <Categories {...props} categories={categories}/>} />
+        <Route exact path="/" render={props => <Categories {...props} />} />
         <Route exact path="/categories" component={() => <Redirect to="/" />} />
-        <Route path="/categories/:categoryId" render={props => <Difficulty {...props} difficulties={difficulties}/>}/>
+        <Route path="/categories/:categoryId" render={props => <Settings {...props} /> }/>
       </Switch>
     </Container>
   </div>
