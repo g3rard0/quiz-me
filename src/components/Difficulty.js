@@ -15,7 +15,10 @@ class Difficulty extends Component {
     const { difficulties, match, difficultySelected} = this.props;
     return (
       <div className="settings__section">
-      <Header as="h3">Select difficulty</Header>
+        <div className="section">
+          <Header as='h1'>Options</Header>
+        </div>
+        <Header as="h3">Select difficulty</Header>
         <Grid>
           {
             difficulties.map(({type}, i) =>

@@ -17,9 +17,6 @@ import QuizList from './QuizList';
 const Main = ({categories, difficulties}) => (
   <div>
     <Container>
-      <div className="section">
-        <Header as='h1'>Options</Header>
-      </div>
       <Switch>
         <Route exact path="/" render={props => <Categories {...props} />} />
         <Route exact path="/categories" component={() => <Redirect to="/" />} />
