@@ -48,9 +48,30 @@ class Settings extends Component {
     this.setState({error: false, questionsCount: e.target.value});
   }
 
+  buildPath = () => {
+    const {
+      questionsCount,
+      categorySelected,
+      difficultySelected,
+      typeSelected
+    } = this.state;
+
+    let path = `/quiz?amount=${questionsCount}`;
+
+    if (categorySelected) {
+      path = `${path}&category=${categorySelected}`
+    }
+    if (difficultySelected != 'any') {
+      path = `${path}&difficulty=${difficultySelected}`;
+    }
+    if (typeSelected != 'any') {
+       path = `${path}&type=${typeSelected}`;
+    }
+    return path;
+  }
   render() {
-    const { isLoading, questionsCount, error, categorySelected, difficultySelected, typeSelected} = this.state;
-    const path = `/quiz?amount=${questionsCount}&category=${categorySelected}&difficulty=${difficultySelected}&type=${typeSelected}`;
+    const { isLoading, questionsCount, error } = this.state;
+    const path = this.buildPath();
     return (
       <div>
         <Difficulty {...this.state} changeDifficulty={this.handleChangeDifficulty}/>
