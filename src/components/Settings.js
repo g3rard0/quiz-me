@@ -69,6 +69,7 @@ class Settings extends Component {
     }
     return path;
   }
+
   render() {
     const { isLoading, questionsCount, error } = this.state;
     const path = this.buildPath();
