@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Dimmer, Loader, Segment } from 'semantic-ui-react'
+import Question from './Question';
+import { Dimmer, Loader, Segment, Header } from 'semantic-ui-react'
 import axios from 'axios';
 import { parse } from 'qs';
 
@@ -7,7 +8,8 @@ class QuizList extends Component {
   state = {
     isLoading: true,
     error: '',
-    quizList: []
+    quizList: [],
+    activeQuestion: 0
   };
   url = 'https://opentdb.com/api.php?';
 
@@ -48,7 +50,7 @@ class QuizList extends Component {
       });
   }
   render() {
-    const { isLoading, error, quizList } = this.state;
+    const { isLoading, error, quizList, activeQuestion } = this.state;
     if (isLoading) {
       return (
         <div>
@@ -69,6 +71,13 @@ class QuizList extends Component {
 
     return (
       <div>
+        <div className="section">
+          <Header as='h1'>
+            <div dangerouslySetInnerHTML={{__html: quizList[activeQuestion].question}} />
+          </Header>
+          <span className="subheading">Question { activeQuestion } of {quizList.length}</span>
+        </div>
+        <Question question={quizList[activeQuestion]}/>
         <pre>{ JSON.stringify(quizList, null, 2)}</pre>
       </div>
     )
