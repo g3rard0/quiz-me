@@ -17,6 +17,11 @@ const QuizSubmission = ({ userAnswers}) => {
           <Modal.Description>
             <Header>{count}/{userAnswers.length} Correct</Header>
             {results}
+            <Modal.Actions>
+              <Button color='green'>
+                <Icon name='checkmark' /> Close
+              </Button>
+            </Modal.Actions>
           </Modal.Description>
         </Modal.Content>
       </Modal>
