@@ -3,18 +3,32 @@ import shuffle from 'shuffle-array';
 
 class Question extends Component {
   renderAnswers = () => {
-    const { question } = this.props
-    return shuffle([question.correct_answer, ...question.incorrect_answers])
-      .map((question, i) => <div key={i} className="answer">{question}</div>)
+    const { question, userAnswer, changeAnswer } = this.props
+    const id = question.id;
+    return question.options
+      .map((option, i) =>
+        <div key={i} className="answer">
+          <input
+            type="radio"
+            name={id}
+            value={option}
+            checked={option == userAnswer.value}
+            onChange={(e) => {
+              changeAnswer(id, option);
+            }}
+          />
+          <span>{option}</span>
+        </div>
+      );
   }
   render() {
-    const { question } = this.props;
-
+    const { question, userAnswer } = this.props;
     return (
       <div className="question">
         {
           this.renderAnswers()
         }
+        <pre>{JSON.stringify(userAnswer, null, 2)}</pre>
         <pre>{JSON.stringify(question, null, 2)}</pre>
       </div>
     )
