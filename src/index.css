@@ -95,3 +95,17 @@ a {
   color: #7F76A9;
   border-bottom: 1px solid rgba(157,157,212,.2);
 }
+
+.answer:hover {
+  background: #F9FAFC;
+}
+
+.answer input {
+  margin: 10px;
+}
+
+pre {
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
