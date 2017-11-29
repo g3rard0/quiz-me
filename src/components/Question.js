@@ -30,8 +30,6 @@ class Question extends Component {
         {
           this.renderAnswers()
         }
-        <pre>{JSON.stringify(userAnswer, null, 2)}</pre>
-        <pre>{JSON.stringify(question, null, 2)}</pre>
       </div>
     )
   }

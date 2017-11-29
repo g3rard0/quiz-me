@@ -127,7 +127,6 @@ class QuizList extends Component {
           />
           { page == totalQuestions && <QuizSubmission userAnswers={userAnswers}/> }
         </div>
-        <pre>{ JSON.stringify(quizList, null, 2)}</pre>
       </div>
     )
   }
