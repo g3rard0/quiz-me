@@ -20,7 +20,7 @@ class QuizSubmission extends Component {
     });
     return (
       <Modal
-        trigger={<Button basic color='green' onClick={this.handleOpen}>Submit Answers</Button>}
+        trigger={<Button color='green' onClick={this.handleOpen}>Submit Answers</Button>}
         open={this.state.modalOpen}
         onClose={this.handleClose}
         >
