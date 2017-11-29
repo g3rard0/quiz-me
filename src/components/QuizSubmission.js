@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Modal, Header, Icon } from 'semantic-ui-react';
 
-const QuizSubmission = ({ userAnswers}) => {
+class QuizSubmission extends Component {
+  render() {
+    let {userAnswers} = this.props;
     let count = 0;
     let results = userAnswers.map(answer => {
       if (!answer.isCorrect) {
@@ -26,6 +28,7 @@ const QuizSubmission = ({ userAnswers}) => {
         </Modal.Content>
       </Modal>
     );
+  }
 }
 
 export default QuizSubmission;
