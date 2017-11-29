@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Question from './Question';
-import { Dimmer, Loader, Segment, Header } from 'semantic-ui-react'
+import { Dimmer, Loader, Segment, Header, Button } from 'semantic-ui-react'
 import axios from 'axios';
 import { parse } from 'qs';
 import shuffle from 'shuffle-array';
 import Pagination from './Pagination';
+import QuizSubmission from './QuizSubmission';
 
 class QuizList extends Component {
   state = {
@@ -101,7 +102,8 @@ class QuizList extends Component {
         </div>
       )
     }
-
+    let page = activeQuestion + 1;
+    let totalQuestions = quizList.length;
     return (
       <div>
         <div className="section">
@@ -115,12 +117,15 @@ class QuizList extends Component {
           userAnswer={userAnswers[activeQuestion]}
           changeAnswer={this.handleChange}
         />
-        <Pagination
-          page={activeQuestion + 1}
-          totalQuestions={quizList.length}
-          nextQuestion={this.nextQuestion}
-          prevQuestion={this.prevQuestion}
-        />
+        <div className="text-center">
+          <Pagination
+            page={activeQuestion + 1}
+            totalQuestions={quizList.length}
+            nextQuestion={this.nextQuestion}
+            prevQuestion={this.prevQuestion}
+          />
+          { page == totalQuestions && <QuizSubmission /> }
+        </div>
         <pre>{ JSON.stringify(quizList, null, 2)}</pre>
       </div>
     )
