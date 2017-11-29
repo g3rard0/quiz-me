@@ -14,7 +14,9 @@ class Question extends Component {
             value={option}
             checked={option == userAnswer.value}
             onChange={(e) => {
-              changeAnswer(id, option);
+              let isCorrect = (option == question.correct_answer);
+              //console.log(option == question.correct_answer);
+              changeAnswer(id, option, isCorrect);
             }}
           />
           <span>{option}</span>

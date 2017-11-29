@@ -17,11 +17,12 @@ class QuizList extends Component {
   };
   url = 'https://opentdb.com/api.php?';
 
-  handleChange = (id, option) => {
+  handleChange = (id, option, isCorrect) => {
     let userAnswers = this.state.userAnswers.slice();
     userAnswers = userAnswers.map(answer => {
       if (answer.id == id) {
         answer.value = option;
+        answer.isCorrect = isCorrect;
       }
       return answer;
     });
@@ -124,7 +125,7 @@ class QuizList extends Component {
             nextQuestion={this.nextQuestion}
             prevQuestion={this.prevQuestion}
           />
-          { page == totalQuestions && <QuizSubmission /> }
+          { page == totalQuestions && <QuizSubmission userAnswers={userAnswers}/> }
         </div>
         <pre>{ JSON.stringify(quizList, null, 2)}</pre>
       </div>

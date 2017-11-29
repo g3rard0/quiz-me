@@ -115,3 +115,17 @@ pre {
   margin-top: 20px;
   display: inline-block;
 }
+
+.incorrect {
+  text-decoration: line-through;
+}
+
+.success,
+.correct {
+  color: #21ba45;
+}
+
+.error,
+.incorrect {
+  color: #db2828;
+}
