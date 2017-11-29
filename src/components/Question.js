@@ -8,18 +8,20 @@ class Question extends Component {
     return question.options
       .map((option, i) =>
         <div key={i} className="answer">
-          <input
-            type="radio"
-            name={id}
-            value={option}
-            checked={option == userAnswer.value}
-            onChange={(e) => {
-              let isCorrect = (option == question.correct_answer);
-              //console.log(option == question.correct_answer);
-              changeAnswer(id, option, isCorrect);
-            }}
-          />
-          <span>{option}</span>
+          <label>
+            <input
+              type="radio"
+              name={id}
+              value={option}
+              checked={option == userAnswer.value}
+              onChange={(e) => {
+                let isCorrect = (option == question.correct_answer);
+                //console.log(option == question.correct_answer);
+                changeAnswer(id, option, isCorrect);
+              }}
+            />
+            <span>{option}</span>
+          </label>
         </div>
       );
   }
