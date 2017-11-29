@@ -19,7 +19,7 @@ body {
   padding: 50px 0;
 }
 
-.content {
+.main .content {
   background: #FFF;
   margin: 20px 0;
   box-shadow: 0px 1px 1px 0px rgba(157,157,212,.2);

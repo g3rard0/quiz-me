@@ -15,7 +15,7 @@ import Settings from './Settings';
 import QuizList from './QuizList';
 
 const Main = ({categories, difficulties}) => (
-  <div>
+  <div class="main">
     <Container>
       <Switch>
         <Route exact path="/" render={props => <Categories {...props} />} />
