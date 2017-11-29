@@ -4,7 +4,7 @@ import { Dimmer, Loader, Segment, Header } from 'semantic-ui-react'
 import axios from 'axios';
 import { parse } from 'qs';
 import shuffle from 'shuffle-array';
-
+import Pagination from './Pagination';
 
 class QuizList extends Component {
   state = {
@@ -25,8 +25,17 @@ class QuizList extends Component {
       return answer;
     });
     this.setState({ userAnswers });
+  };
 
-  }
+  nextQuestion = () => {
+    let { activeQuestion } = this.state;
+    this.setState({ activeQuestion: activeQuestion + 1});
+  };
+
+  prevQuestion = () => {
+    let { activeQuestion } = this.state;
+    this.setState({ activeQuestion: activeQuestion - 1});
+  };
 
   componentDidMount() {
     const { location } = this.props;
@@ -105,6 +114,12 @@ class QuizList extends Component {
           question={quizList[activeQuestion]}
           userAnswer={userAnswers[activeQuestion]}
           changeAnswer={this.handleChange}
+        />
+        <Pagination
+          page={activeQuestion + 1}
+          totalQuestions={quizList.length}
+          nextQuestion={this.nextQuestion}
+          prevQuestion={this.prevQuestion}
         />
         <pre>{ JSON.stringify(quizList, null, 2)}</pre>
       </div>
