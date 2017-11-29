@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import { Button, Modal, Header, Icon } from 'semantic-ui-react';
 
 class QuizSubmission extends Component {
+  state = {
+    modalOpen: false
+  }
+
+  handleOpen = () => this.setState({ modalOpen: true });
+  handleClose = () => this.setState({ modalOpen: false });
   render() {
     let {userAnswers} = this.props;
     let count = 0;
@@ -13,14 +19,18 @@ class QuizSubmission extends Component {
       return <p>{answer.id}. <Icon name="check" className="success"/> <span className="correct">{answer.value}</span></p>;
     });
     return (
-      <Modal dimmer={true} trigger={<Button basic color='green'>Submit Answers</Button>}>
+      <Modal
+        trigger={<Button basic color='green' onClick={this.handleOpen}>Submit Answers</Button>}
+        open={this.state.modalOpen}
+        onClose={this.handleClose}
+        >
         <Modal.Header>Quiz Submission</Modal.Header>
         <Modal.Content>
           <Modal.Description>
             <Header>{count}/{userAnswers.length} Correct</Header>
             {results}
             <Modal.Actions>
-              <Button color='green'>
+              <Button color='green' onClick={this.handleClose}>
                 <Icon name='checkmark' /> Close
               </Button>
             </Modal.Actions>
