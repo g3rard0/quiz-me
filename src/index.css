@@ -137,14 +137,15 @@ pre {
 
 .option-icon {
   display: inline-block;
+  font-size: .8em;
   margin-right: 10px;
   border: 2px solid rgba(0,0,0,0.4);
-  height: 18px;
-  width: 18px;
+  /*height: 18px;*/
+  /*width: 18px;*/
+  padding: 5px 10px;
+  line-height: 18px;
   border-radius: 50%;
   vertical-align: middle;
-  font-size: 10px;
-  line-height: 12px;
   text-align: center;
 }
 
