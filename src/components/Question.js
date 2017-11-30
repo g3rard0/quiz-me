@@ -20,6 +20,7 @@ class Question extends Component {
                 changeAnswer(id, option, isCorrect);
               }}
             />
+            <span className='option-icon'>{i + 1}</span>
             <span>{option}</span>
           </label>
         </div>

@@ -92,7 +92,7 @@ a {
 
 .answer {
   padding: 25px 30px;
-  color: #7F76A9;
+  color: rgba(0,0,0,0.4);
   border-bottom: 1px solid rgba(157,157,212,.2);
 }
 
@@ -128,4 +128,31 @@ pre {
 .error,
 .incorrect {
   color: #db2828;
+}
+
+/*input[type="radio"]:checked + span{
+  color: green;
+}*/
+
+.answer input[type="radio"] {
+  display: none;
+}
+
+
+.option-icon {
+  display: inline-block;
+  margin-right: 10px;
+  border: 2px solid rgba(0,0,0,0.4);
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  vertical-align: middle;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+}
+
+input[type="radio"]:checked ~ span{
+  color: rgba(243, 49, 128, 0.6);
+  border-color: rgba(243, 49, 128, 0.6);
 }

@@ -20,6 +20,8 @@ class QuizSubmission extends Component {
     });
     return (
       <Modal
+        size='tiny'
+        dimmer='inverted'
         trigger={<Button color='green' onClick={this.handleOpen}>Submit Answers</Button>}
         open={this.state.modalOpen}
         onClose={this.handleClose}
