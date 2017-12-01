@@ -6,6 +6,7 @@ import { parse } from 'qs';
 import shuffle from 'shuffle-array';
 import Pagination from './Pagination';
 import QuizSubmission from './QuizSubmission';
+import _ from 'lodash';
 
 class QuizList extends Component {
   state = {
@@ -57,11 +58,13 @@ class QuizList extends Component {
         console.log(res.data.results);
         let userAnswers = [];
         let quizList = res.data.results;
-        quizList.forEach((quiz, i) => {
-          quiz.id = i;
-          quiz.options = shuffle([quiz.correct_answer, ...quiz.incorrect_answers]);
+        quizList.forEach((quiz) => {
+          let quizId = _.uniqueId('question-');
+          quiz.id = quizId;
+          quiz.options = shuffle([quiz.correct_answer, ...quiz.incorrect_answers])
+            .map(option => ({ option, id: _.uniqueId('opt')}));
           userAnswers.push({
-            id: i,
+            id: quizId,
             value: ''
           });
         });

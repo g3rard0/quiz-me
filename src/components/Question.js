@@ -4,10 +4,10 @@ import shuffle from 'shuffle-array';
 class Question extends Component {
   renderAnswers = () => {
     const { question, userAnswer, changeAnswer } = this.props
-    const id = question.id;
+    const quizId = question.id;
     return question.options
-      .map((option, i) =>
-        <div key={i} className="answer">
+      .map(({option, id}, i) =>
+        <div key={id} className="answer">
           <label>
             <input
               type="radio"
@@ -16,8 +16,7 @@ class Question extends Component {
               checked={option == userAnswer.value}
               onChange={(e) => {
                 let isCorrect = (option == question.correct_answer);
-                //console.log(option == question.correct_answer);
-                changeAnswer(id, option, isCorrect);
+                changeAnswer(quizId, option, isCorrect);
               }}
             />
             <span className='option-icon'>{i + 1}</span>
